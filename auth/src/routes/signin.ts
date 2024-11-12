@@ -1,12 +1,14 @@
 import express, { Request, Response } from "express";
-import { body, validationResult } from "express-validator";
-import jwt from "jsonwebtoken";
+import { body } from "express-validator";
 
-import { validateRequest } from "../middlewares/validate-request";
+import {
+  validateRequest,
+  BadRequestError,
+  generateJwt,
+} from "@moriticket/common";
+
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
 import { Password } from "../services/password";
-import { generateJwt } from "../middlewares/generate-jwt";
 
 const router = express.Router();
 
