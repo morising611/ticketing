@@ -1,5 +1,5 @@
 // import axios from "axios";
-import buildClient from "../api/build-client";
+import buildClient from '../api/build-client';
 
 const LandingPage = ({ currentUser }) => {
   return currentUser ? (
@@ -10,8 +10,8 @@ const LandingPage = ({ currentUser }) => {
 };
 
 LandingPage.getInitialProps = async ({ req }) => {
-  console.log("Landing Page!");
-  const { data } = await buildClient({ req }).get("/api/users/currentuser");
+  console.log('Landing Page!');
+  const { data } = await buildClient({ req }).get('/api/users/currentuser');
   return data;
 };
 
