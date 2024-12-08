@@ -27,8 +27,8 @@ router.post(
     });
     await ticket.save();
 
-    // send a created event
-    await new TicketCreatedPublisher(natsWrapper.client).publish({
+    // send a created event (don't have to wait)
+    new TicketCreatedPublisher(natsWrapper.client).publish({
       id: ticket.id,
       title: ticket.title,
       price: ticket.price,
