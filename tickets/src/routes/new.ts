@@ -30,6 +30,7 @@ router.post(
     // send a created event (don't have to wait)
     new TicketCreatedPublisher(natsWrapper.client).publish({
       id: ticket.id,
+      version: ticket.version,
       title: ticket.title,
       price: ticket.price,
       userId: ticket.userId,
