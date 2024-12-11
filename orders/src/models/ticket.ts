@@ -54,12 +54,6 @@ ticketSchema.statics.build = (attrs: TicketAttrs) => {
     price: attrs.price,
   });
 };
-ticketSchema.statics.findByEvent = (event: { id: string; version: number }) => {
-  return Ticket.findOne({
-    _id: event.id,
-    version: event.version - 1,
-  });
-};
 ticketSchema.methods.isReserved = async function () {
   const existingOrder = await Order.findOne({
     ticket: this,
