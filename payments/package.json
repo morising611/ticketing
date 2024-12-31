@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@moriticket/common": "^1.0.27",
+    "@moriticket/common": "^1.0.29",
     "@types/cookie-session": "^2.0.49",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/mongoose": "^5.11.97",
