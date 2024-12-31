@@ -42,6 +42,14 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
+    - image: morisita611/payments
+      context: payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.js'
+            dest: .
     - image: morisita611/client
       context: client
       docker:
