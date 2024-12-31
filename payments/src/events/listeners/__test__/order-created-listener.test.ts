@@ -3,10 +3,9 @@ import { OrderCreatedEvent, OrderStatus } from '@moriticket/common/build';
 import mongoose from 'mongoose';
 import { Message } from 'node-nats-streaming';
 import { natsWrapper } from '../../../nats-wrapper';
-import { Order } from '../../../../models/order';
+import { Order } from '../../../models/order';
 
 const setup = async () => {
-  // Create an instance of the listener
   const listener = new OrderCreatedListener(natsWrapper.client);
 
   const data: OrderCreatedEvent['data'] = {
